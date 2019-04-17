@@ -50,7 +50,6 @@ public class Book implements Subject {
     //This notes whether the Book has been accepted to advance to publication
     //This can be entered by an editor or reviewers
     public boolean advancePublication; 
-    public Observer updateBookDetails;
     
     private ArrayList bookObservers;
     
@@ -101,10 +100,10 @@ public class Book implements Subject {
         this.manuscriptAgreed = manuscriptAgreed;
     }
     
-    /*
+    
     public void printBookDetails(){
             System.out.println("Book Title is " + bookTitle);
         }
-    */
+    
     
 }

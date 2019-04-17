@@ -9,36 +9,41 @@ package org.ExeRiver.model;
  *
  * @author Millie Coombes
  */
-import java.util.Observable;
+import java.util.ArrayList;
 import java.util.Observer;
 
-public abstract class ProfessionalReviewer extends Reviewer{
+public class ProfessionalReviewer extends User{
     //This is a list of booksReviewed
     //The intention here is to source the list by books the PR has been assigned to
-    //private ArrayList booksReviewed;
+    private ArrayList booksReviewed;
+    private Subject Book;
+    private Subject Payment;
+    private Subject Meeting;
     
-    //Update code for the professional reviewer
-    Observable observable;
-    private String meetingNotes;
-    
-    public ProfessionalReviewer(Observable observable) {
-        this.observable = observable;
-        observable.addObserver(this);
+    public ProfessionalReviewer(){
+             
+        this.Book = Book;
+        Book.addObserver((Observer) this);
+        }
+    @Override
+    public void updateBookDetails(int profR1Rating, int profR2Rating, int editorRating, String profR1Comments, String profR2Comments, boolean overallAcceptStatus, boolean manuscriptAgreed){
+
     }
     
     @Override
-    public void update(Observable obs, Object arg) {
-        if (obs instanceof Meeting) {
-            Meeting meeting = (Meeting)obs;
-            this.meetingNotes = meeting.getMeetingNotes();
-        }
+    public void updatePaymentDetails(float amount, boolean complete){
+
     }
-    /*
-    public addBooksReviewed() {
+    @Override
+    public void updateMeetingDetails(String meetingNotes){
+
+    }
+    
+    public void addBooksReviewed() {
         booksReviewed = new ArrayList();
-        booksReviewed.add(//input when registered to book);
-        booksReviewed.remove(//input when PR is no longer registered to book);
+        booksReviewed.add("input when registered to book");
+        booksReviewed.remove("input when PR is no longer registered to book");
         //https://www.dummies.com/programming/java/use-array-lists-in-java/
     }
-    */
+    
 }

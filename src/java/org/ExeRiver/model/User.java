@@ -15,7 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 //import java.util.*;
 
-public class User implements Observer {
+public abstract class User implements Observer {
 	
 	public int personalID;
         public String forename;
@@ -79,15 +79,15 @@ public class User implements Observer {
             
         }
         @Override
-        public void updateBookRevisionDetails(){
+        public void updateBookRevisionDetails(String editorComments, String manuscript){
             
         }
         @Override
-        public void updatePaymentDetails(){
+        public void updatePaymentDetails(float amount, boolean complete){
             
         }
         @Override
-        public void updateMeetingDetails(){
+        public void updateMeetingDetails(String meetingNotes){
             
         }
         

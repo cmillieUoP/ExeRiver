@@ -10,7 +10,7 @@ package org.ExeRiver.model;
  * @author Millie Coombes
  */
 import java.util.ArrayList;
-import java.util.Observer;
+//import java.util.Observer;
 
 public abstract class Agent extends User{
        
@@ -31,20 +31,11 @@ public abstract class Agent extends User{
             
         }
         @Override
-        public void updateBookRevisionDetails(){
+        public void updatePaymentDetails(float amount, boolean complete){
             
         }
         @Override
-        public void updatePaymentDetails(){
+        public void updateMeetingDetails(String meetingNotes){
             
         }
-        @Override
-        public void updateMeetingDetails(){
-            
-        }
-    
-
-    
-   
-
 }
