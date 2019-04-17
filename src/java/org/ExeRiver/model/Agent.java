@@ -12,7 +12,7 @@ package org.ExeRiver.model;
 import java.util.ArrayList;
 //import java.util.Observer;
 
-public abstract class Agent extends User{
+public class Agent extends User{
        
     //This is a list of authorsRepresenting
     //The intention here is to source the list by authors the agent has been assigned to
@@ -24,6 +24,9 @@ public abstract class Agent extends User{
         authorsRepresenting.remove("roger");
         //input when PR is no longer registered to book
         //https://www.dummies.com/programming/java/use-array-lists-in-java/
+    }
+    public Agent() {
+        
     }
     
         @Override
@@ -37,5 +40,6 @@ public abstract class Agent extends User{
         @Override
         public void updateMeetingDetails(String meetingNotes){
             
-        }
+        
+    }
 }

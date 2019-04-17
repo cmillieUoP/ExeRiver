@@ -9,11 +9,15 @@ package org.ExeRiver.model;
  *
  * @author Millie Coombes
  */
-import java.util.Observable;
 import java.util.Observer;
 
 public class CompanyAdministrator extends User{
-    public void createAccount(){
+    
+    
+    public void createAgentAccount(){
+        new Agent();
+        personalID =  
+        //Agent agentOne = new Agent();
         //Take the details of a person
         //Create an instance of the account
         //Add the details to the account

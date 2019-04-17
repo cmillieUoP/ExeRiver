@@ -14,11 +14,16 @@ public class TestClass {
     /**
      * @param args the command line arguments
      */
+    //private Subject book;
+    
     public static void main(String[] args) {
-        Author authorOne = new Author();
-        authorOne.personalID = 00001;
-        authorOne.printAuthorDetails();
+        //Author authorOne = new Author(Book);
+        //this.Book = book;
+        
+        //authorOne.personalID = 00001;
+        //authorOne.printAuthorDetails();
         Book bookOne = new Book();
+        bookOne.bookID = 00001;
         bookOne.bookTitle = "James and the Giant Peach";
         bookOne.printBookDetails();
         }

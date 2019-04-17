@@ -36,15 +36,23 @@ public class LoginBean {
         this.password = password;
     }
  
-    //Validate User Method, takes entered input and checks against a preset acceptable userName and password
-    //or javacodegeeks and access123. Dependent on whether this is correct or not the user will be taken
-    //to the success or failure page.
+    //Validate User Method, takes entered input and checks against a preset 
+    //acceptable username and password. Dependent on whether this is correct 
+    //or not the user will be taken to the success or failure page.
     public String validateUserLogin() {
         String navResult = "";
         System.out.println("Entered Username is= " + userName + ", password is= " + password);
-        if (userName.equals("username") && password.equals("password")) {
-            navResult = "success";
-        } else {
+        if (userName.equals("AgentUsername") && password.equals("AgentPassword")) {
+            navResult = "success";}
+        else if (userName.equals("AuthorUsername") && password.equals("AuthorPassword")) {
+            navResult = "success"; }
+        else if (userName.equals("CompanyAdminUsername") && password.equals("CompanyAdminPassword")) {
+            navResult = "success"; }
+        else if (userName.equals("EditorUsername") && password.equals("EditorPassword")) {
+            navResult = "success"; }
+        else if (userName.equals("ProfReviewerUsername") && password.equals("ProfReviewerPassword")) {
+            navResult = "success"; }
+         else {
             navResult = "failure";
         }
         return navResult;

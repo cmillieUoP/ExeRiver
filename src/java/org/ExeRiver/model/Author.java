@@ -11,21 +11,21 @@ package org.ExeRiver.model;
  */
 import java.util.ArrayList;
 import java.util.Observer;
-//import java.util.Observer;
 
 public class Author extends User {
 	
 private ArrayList booksWritten;
 private Subject Book;
+private Subject BookRevision;
+private Subject Meeting;
+private Subject Payment;
         
     //This is the constructor for an author
-    public Author(){
-        /*
-        Subject book = bookOne;
-        this.Book = Book;
-        Book.addObserver((Observer) this);
-        */
+    public Author(Subject bookID){
         
+        Subject book = bookID;
+        this.Book = book;
+        Book.addObserver((Observer) this);
         }
     
         @Override

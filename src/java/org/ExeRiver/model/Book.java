@@ -56,11 +56,11 @@ public class Book implements Subject {
     public Book() {
         bookObservers = new ArrayList();
     }
- 
+    @Override
     public void addObserver(Observer o){
         bookObservers.add(o);
     }
-    
+    @Override
     public void removeObserver(Observer o) {
         int i = bookObservers.indexOf(o);
         if (i >= 0) {

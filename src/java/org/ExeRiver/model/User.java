@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public abstract class User implements Observer {
 	
-	public int personalID;
+	public String personalID;
         public String forename;
         public String surname;
         public String address;
