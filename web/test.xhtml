@@ -5,13 +5,14 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 <head>
-  <title>Exe River Publishing</title>
+  <title>Bootstrap 4 Example</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<title>Exe River</title>
 <style>
 * 
 /*Maintains content when resizing page*/
@@ -47,9 +48,9 @@ a:active {
 /* Style the header */
 header {
   background-color: #c3effc;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
   color: #4c0200;
 }
 
@@ -61,7 +62,6 @@ nav {
   height: 800px;
   background: #2B2D42;
   padding: 20px;
-  outline: 1px solid darkgray;
 }
 
 /* Style the list inside the menu */
@@ -71,11 +71,10 @@ nav ul {
 }
 
 article {
-  outline: 1px solid darkgray;
   float: left;
   padding: 20px;
-  width: 80%;
-  background-color: #cccccc;
+  width: 70%;
+  background-color: #c3effc;
   height: 800px;
 }
 
@@ -104,19 +103,11 @@ footer {
 </style>
 </head>
 <body>
-    <header>
-        <img align="left"  src="resources/images/logoS.jpg" alt="Logo" width="65" height="65" />
-        <h1> EXE RIVER PUBLISHING </h1> 
-        <!--<button type="button" class="btn btn-secondary">
-        Notifications <span class="badge badge-dark">4</span>
-        </button>-->
-    </header>
 <section>
   <nav>
-      
-        <br></br>
+      <img src="resources/images/logoS.jpg" alt="Logo" width="100" height="100" />
     <ul>
-      <li><a href="faces/main.xhtml">HOME</a></li>
+      <li><a href="faces/home.xhtml">HOME</a></li>
       <br></br>
       <li><a href="faces/details.xhtml">CHANGE DETAILS</a></li>
       <br></br>
@@ -126,16 +117,13 @@ footer {
       <br></br>
     </ul>
   </nav>
-    <article>
-        <div>
-            
-            <h1>Header</h1>
-            <p>First Line</p>           
-        </div>
-    </article>
-    
 </section>
-
+<div class="container">
+  <h1>My First Bootstrap Page</h1>
+  <p>This part is inside a .container class.</p> 
+  <p>The .container class provides a responsive fixed width container.</p>           
+</div>
 
 </body>
 </html>
+
