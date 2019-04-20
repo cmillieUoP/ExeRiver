@@ -10,7 +10,6 @@ package org.ExeRiver.model;
  * @author Millie Coombes
  */
 import java.util.ArrayList;
-import java.util.Observer;
 
 public class Meeting implements Subject{
     //This is the unique meeting ID
@@ -36,11 +35,11 @@ public class Meeting implements Subject{
     public Meeting() {
         meetingObservers = new ArrayList();
     }
-    
+    @Override
     public void addObserver(Observer o){
         meetingObservers.add(o);
     }
-    
+    @Override
     public void removeObserver(Observer o) {
         int i = meetingObservers.indexOf(o);
         if (i >= 0) {
@@ -76,7 +75,19 @@ public class Meeting implements Subject{
         //https://www.dummies.com/programming/java/use-array-lists-in-java/
     }
     
-
+    public void printMeetingDetails(){
+        System.out.println("Meeting Title is: " + meetingTitle);
+        System.out.println("Meeting Type is: " + meetingType);
+        System.out.println("Date of the Meeting is: " + meetingDate);
+        }
+    
+    public void createMeeting(){
+       Meeting meetingOne = new Meeting();
+       meetingOne.meetingTitle = "Review of James and the Giant Peach";
+       meetingOne.meetingType = "Telephone";
+       meetingOne.meetingDate = "01/04/2019";
+       meetingOne.printMeetingDetails();
+    }
     
     
 }

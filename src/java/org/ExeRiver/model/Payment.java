@@ -10,7 +10,7 @@ package org.ExeRiver.model;
  * @author Millie Coombes
  */
 
-import java.util.Observer;
+
 import java.util.ArrayList;
 
 public class Payment implements Subject{
@@ -23,7 +23,7 @@ public class Payment implements Subject{
     //This is the ID for the book that is the subject of the payment
     private int bookID;
     //This is the amount the payment is for
-    private float amount;
+    private double amount;
     //This marks whether the payment is complete and agreed or still pending
     private boolean complete;
     
@@ -58,17 +58,26 @@ public class Payment implements Subject{
         notifyObservers();
     }
     
-    public void setPaymentInfo(float amount, boolean complete){
+    public void setPaymentInfo(double amount, boolean complete){
         this.amount = amount;
         this.complete = complete;
         paymentInfoChanged();
     }
     
-    public float getAmount() {
+    public double getAmount() {
         return amount;
     }
     
     public boolean getComplete() {
         return complete;
     } 
-}
+    
+    public void createPayment(){
+       Payment paymentOne = new Payment();
+       paymentOne.amount = 100.00;
+       paymentOne.printPaymentDetails(); 
+    }
+    public void printPaymentDetails(){
+        System.out.println("Payment to editor is: " + amount);
+    }
+    }

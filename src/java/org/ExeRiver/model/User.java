@@ -17,12 +17,12 @@ import java.io.IOException;
 
 public abstract class User implements Observer {
 	
-	public String personalID;
-        public String forename;
-        public String surname;
-        public String address;
-        public String password;
-        public String username;
+    public String personalID;
+    public String forename;
+    public String surname;
+    public String address;
+    public String password;
+    public String username;
         
     
     //THE FOLLOWING METHODS ARE IMPLEMENTED BY ALL    
@@ -90,12 +90,7 @@ public abstract class User implements Observer {
         public void updateMeetingDetails(String meetingNotes){
             
         }
-        
-        public void printAuthorDetails(){
-            System.out.println("Name:" + forename + surname);
-        }
-        
-        
+
     //This method is used by the editor, agent and author
     public void agreeAdvancePayment(){
         

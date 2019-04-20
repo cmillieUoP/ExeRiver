@@ -9,7 +9,6 @@ package org.ExeRiver.model;
  *
  * @author Millie Coombes
  */
-import java.util.Observer;
 
 public interface Subject {
         //methods to add and remove observers

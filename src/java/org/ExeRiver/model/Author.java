@@ -10,24 +10,42 @@ package org.ExeRiver.model;
  * @author Millie Coombes
  */
 import java.util.ArrayList;
-import java.util.Observer;
 
 public class Author extends User {
 	
-private ArrayList booksWritten;
-private Subject Book;
-private Subject BookRevision;
-private Subject Meeting;
-private Subject Payment;
+public ArrayList booksWritten;
+public Subject book;
+public Subject bookRevision;
+public Subject meeting;
+public Subject payment;
         
     //This is the constructor for an author
-    public Author(Subject bookID){
-        
-        Subject book = bookID;
-        this.Book = book;
-        Book.addObserver((Observer) this);
+    public Author(/*Subject book*/){
+        //this.book = book;
+        //book.addObserver(this);
         }
+    //These are the methods for adding the author as an observer
+    //to these subjects
+    public void assignBook(Subject book){
+        //this.book = book;
+        book.addObserver(this);
+    }
+    public void assignBookRevision(Subject bookRevision){
+        //this.book = book;
+        book.addObserver(this);
+    }
+    public void assignMeeting(Subject meeting){
+        //this.meeting = meeting;
+        meeting.addObserver(this);
+    }
+    public void assignPayment(Subject payment){
+        //this.payment = payment;
+        payment.addObserver(this);
+    }
     
+    //These override the update methods as stated in the Observer interface
+    //When updates happen to the subjects the values passed after the method
+    //will be updated in the author observer.
         @Override
 	public void updateBookDetails(int profR1Rating, int profR2Rating, int editorRating, String profR1Comments, String profR2Comments, boolean overallAcceptStatus, boolean manuscriptAgreed){
             
@@ -44,9 +62,29 @@ private Subject Payment;
         public void updateMeetingDetails(String meetingNotes){
             
         }
-        
+
+        public void createAuthor() {
+        Author authorOne = new Author();
+        authorOne.personalID = "AU0001";
+        authorOne.forename = "Roald";
+        authorOne.surname = "Dahl";
+        authorOne.address = "83 High Street, Great Missenden";
+        authorOne.username = "RDahl";
+        authorOne.password = "WillyWonka";
+        authorOne.printAuthorDetails();
+        Author authorTwo = new Author();
+        authorTwo.personalID = "AU0002";
+        authorTwo.forename = "Daphne";
+        authorTwo.surname = "Du Maurier";
+        authorTwo.address = "Jamaica Inn, Bolventor, Launceston";
+        authorTwo.username = "DDMaurier";
+        authorTwo.password = "MaximDeWinter";
+        authorTwo.printAuthorDetails();
+        }
         public void printAuthorDetails(){
-            System.out.println("Name:" + forename + surname);
+            System.out.println("Author name is: " + forename + " " + surname);
+            System.out.println("Author address is: " + address);
+            System.out.println("Author password is: " + password + " ...Sshhh");
         }
         
         public void addBooksWritten() {

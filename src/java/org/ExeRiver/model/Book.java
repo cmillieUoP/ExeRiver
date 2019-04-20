@@ -10,19 +10,21 @@ package org.ExeRiver.model;
  * @author Millie Coombes
  */
 
-import java.util.Observer;
 import java.util.ArrayList;
-
+import java.util.List;
 
 public class Book implements Subject {
-    public int bookID;
+    public String bookID;
     public String bookTitle;
+    //This is the string reference that can be used to route to the file in the html
+    public String bookImageRef;
     //This is the ID of the first professional reviewer assigned to the book
     public int profRID1;
     //This is the ID of the second professional reviewer assigned to the book
     public int profRID2;
     public int editorID;
     public int authorID;
+    public String authorName;
     //This is the ID of the agent who is assigned to deal with the book
     public int agentID;
     //This is the rating out of five the first professional reviewer gives to the book
@@ -50,11 +52,17 @@ public class Book implements Subject {
     //This notes whether the Book has been accepted to advance to publication
     //This can be entered by an editor or reviewers
     public boolean advancePublication; 
-    
+    public List<Book> books;
+    //private Image bookCover = ;
     private ArrayList bookObservers;
     
     public Book() {
         bookObservers = new ArrayList();
+        books = new ArrayList<>();
+    }
+    
+    public List<Book> getList() {
+        return books;
     }
     @Override
     public void addObserver(Observer o){
@@ -72,7 +80,7 @@ public class Book implements Subject {
     public void notifyObservers(){
        for (int i = 0; i < bookObservers.size(); i++) {
            Observer observer = (Observer)bookObservers.get(i);
-           //observer.updateBookDetails(profR1Rating,profR2Rating,editorRating,profR1Comments,profR2Comments,overallAcceptStatus,manuscriptAgreed);
+           observer.updateBookDetails(profR1Rating,profR2Rating,editorRating,profR1Comments,profR2Comments,overallAcceptStatus,manuscriptAgreed);
        } 
     }
     
@@ -100,10 +108,25 @@ public class Book implements Subject {
         this.manuscriptAgreed = manuscriptAgreed;
     }
     
-    
     public void printBookDetails(){
-            System.out.println("Book Title is " + bookTitle);
+        System.out.println("Book ID is: " + bookID);
+        System.out.println("Book Title is: " + bookTitle);
+        System.out.println("Book Author is: " + authorName);
+        System.out.println("Book Cover Reference is: /resources/images/books/" + bookImageRef);
         }
     
-    
+    public void createBook(){
+       Book bookOne = new Book();
+       bookOne.bookID = "B0001";
+       bookOne.bookTitle = "James and the Giant Peach";
+       bookOne.authorName = "Roald Dahl";
+       bookOne.bookImageRef = "JATGP.jpg";
+       bookOne.printBookDetails(); 
+       Book bookTwo = new Book();
+       bookTwo.bookID = "B0002";
+       bookTwo.bookTitle = "The Twits";
+       bookTwo.authorName = "Roald Dahl";
+       bookTwo.bookImageRef = "Twits.jpg";
+       bookTwo.printBookDetails(); 
+    }
 }
