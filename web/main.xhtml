@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -11,7 +5,13 @@ and open the template in the editor.
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 <head>
-<title>Exe River</title>
+  <title>Exe River Publishing</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style>
 * 
 /*Maintains content when resizing page*/
@@ -21,6 +21,7 @@ and open the template in the editor.
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #2B2D42;
 }
 /*Dictates the design of the links*/
 a:link {
@@ -38,33 +39,23 @@ a:hover {
   background-color: white;
   text-decoration: none;
 }
-a:active {
-  color: DarkSlateGrey;
-  background-color: transparent;
-  text-decoration: none;
-}
 
 /* Style the header */
 header {
   background-color: #c3effc;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
-  font-size: 35px;
+  font-size: 50px;
   color: #4c0200;
+  outline: 1px solid darkgray;
 }
 
-.books {
-  background-color: #8d99ae;
-  color: black;
-  margin: 20px;
-  padding: 20px;
-}
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
   text-align: center;
   width: 20%;
-  height: 800px;
+  height: 100vh;
   background: #2B2D42;
   padding: 20px;
 }
@@ -78,9 +69,10 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  width: 70%;
-  background-color: #c3effc;
-  height: 800px;
+  width: 80%;
+  background-color: #cccccc;
+  height: 120vh;
+  position: relative;
 }
 
 /* Clear floats after the columns */
@@ -96,7 +88,23 @@ footer {
   padding: 10px;
   text-align: center;
   color: #4c0200;
+  outline: 1px solid darkgray;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
+  .books {
+      background-color: #8d99ae;
+      color: black;
+      margin: 20px;
+      padding: 20px;
+      height: 225px;
+  }
+
+  .img {
+      float:right;
+  }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
@@ -104,15 +112,25 @@ footer {
     width: 100%;
     height: auto;
   }
+  
+
 }
 </style>
 </head>
 <body>
+    <header>
+        <img align="left"  src="resources/images/logoS.jpg" alt="Logo" width="65" height="65" />
+        <h1> EXE RIVER PUBLISHING </h1> 
+        <!--<button type="button" class="btn btn-secondary">
+        Notifications <span class="badge badge-dark">4</span>
+        </button>-->
+    </header>
 <section>
   <nav>
-      <img src="resources/images/logoS.jpg" alt="Logo" width="100" height="100" />
-    <ul>     
-      <li><a href="faces/home.xhtml">HOME</a></li>
+      
+        <br></br>
+    <ul>
+      <li><a href="faces/main.xhtml">HOME</a></li>
       <br></br>
       <li><a href="faces/details.xhtml">CHANGE DETAILS</a></li>
       <br></br>
@@ -122,29 +140,48 @@ footer {
       <br></br>
     </ul>
   </nav>
-  
-  <article>
-    <h1>Exe River Publishing</h1>
-    <p>This is where the paragraph text goes.</p>
-    <div class="books">
-    <img src="resources/images/jamesAndTheGiantPeach.jpg" alt="Book Cover" width="100" height="100" />
-    <h2>James and the Giant Peach</h2>
-    <p>Author: Roald Dahl</p>
-    <p>Agent: John Smith</p>
-    </div>
+    <article>
+    <h1></h1>
 
     <div class="books">
-    <h2>Paris</h2>
-    <p>Paris is the capital of France.</p>
+        <div class="img">
+            <img src="resources/images/books/JATGP.jpg" alt="BookCover" width="110" height="170"/>
+        </div>
+        <h4>JAMES AND THE GIANT PEACH</h4>
+        <i> by Roald Dahl</i>
+<!--        <p>James Henry Trotter lives with his two horrid aunts, Spiker and Sponge. 
+            He hasn't got a single friend in the whole wide world. 
+            That is not, until he meets the Old Green Grasshopper and the rest of the insects aboard a giant, magical peach! </p>-->
+        
     </div>
-
     <div class="books">
-    <h2>Tokyo</h2>
-    <p>Tokyo is the capital of Japan.</p>
+        <div class="img">
+            <img src="resources/images/books/Twits.jpg" alt="BookCover" width="110" height="170"/>
+        </div>
+        <h4>THE TWITS</h4>
+        <i> by Roald Dahl</i>
+<!--        <p>Mr Twit hates his wife. Mrs Twit detests her husband. 
+            They like nothing more than playing wicked tricks on one another. 
+            Sooner or later, things are going to go too far... </p>-->
+        
     </div>
+    <div class="books">
+        <div class="img">
+            <img src="resources/images/books/Rebecca.jpg" alt="BookCover" width="110" height="170"/>
+        </div>
+        <h4>REBECCA</h4>
+        <i> by Daphne Du Maurier</i>
+<!--        <p>Mrs De Winter learns the curiosities of both her new
+            husband and her new home, Manderley. But she might be in
+            for more than she expected when the past comes back to life.</p>-->
+        
+    </div>
+    
   </article>
 </section>
-
+    <footer>
+        Copyright Exe River Publishing 2019
+    </footer>
 
 </body>
 </html>
