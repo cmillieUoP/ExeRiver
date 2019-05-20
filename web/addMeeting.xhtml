@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+  <title>Exe River Publishing</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+* 
+/*Maintains content when resizing page*/
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2B2D42;
+}
+/*Dictates the design of the links*/
+a:link {
+  color: #c3effc;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: CadetBlue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: DarkSlateGrey;
+  background-color: white;
+  text-decoration: none;
+}
+
+/* Style the header */
+header {
+  background-color: #c3effc;
+  padding: 20px;
+  text-align: center;
+  font-size: 50px;
+  color: #4c0200;
+  outline: 1px solid darkgray;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  text-align: center;
+  width: 20%;
+  height: 100vh;
+  background: #2B2D42;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: #cccccc;
+  height: 100vh;
+  position: relative;
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #c3effc;
+  padding: 10px;
+  text-align: center;
+  color: #4c0200;
+  outline: 1px solid darkgray;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+    <header>
+        <img align="left"  src="resources/images/logoS.jpg" alt="Logo" width="65" height="65" />
+        <h1> EXE RIVER PUBLISHING </h1> 
+        <!--<button type="button" class="btn btn-secondary">
+        Notifications <span class="badge badge-dark">4</span>
+        </button>-->
+    </header>
+<section>
+  <nav>
+      
+        <br></br>
+    <ul>
+      <li><a href="faces/main.xhtml">HOME</a></li>
+      <br></br>
+      <li><a href="faces/details.xhtml">CHANGE DETAILS</a></li>
+      <br></br>
+      <li><a href="faces/payments.xhtml">VIEW PAYMENTS</a></li>
+      <br></br>
+      <li><a href="faces/meetings.xhtml">VIEW MEETINGS</a></li>
+      <br></br>
+      <li><a href="faces/addUser.xhtml">ADD USER</a></li>
+      <br></br>
+      <li><a href="faces/addBook.xhtml">ADD BOOK</a></li>
+      <br></br>
+      <li><a href="faces/addMeeting.xhtml">ADD MEETING</a></li>
+      <br></br>
+      <li><a href="faces/addPayment.xhtml">ADD PAYMENT</a></li>
+      <br></br>
+    </ul>
+  </nav>
+    <article>
+        <h:form id="addMeetingForm">
+        <h2>Add Meeting</h2>
+        <p> Please enter the meeting information below:</p>
+        <div>
+            <h:outputLabel value="Meeting Notes: " />
+            <h:inputText value="#{addMeetingBean.meetingNotes}" />
+        </div>
+        <div>
+            <h:outputLabel value="Meeting Attendees: " />
+            <h:inputText value="#{addMeetingBean.meetingAttendees}" />
+        </div>
+        </h:form>
+    </article>
+    
+</section>
+    <footer>
+        Copyright Exe River Publishing 2019
+    </footer>
+
+</body>
+</html>
+
+
+

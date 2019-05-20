@@ -29,7 +29,7 @@ public abstract class User implements Observer {
     public void login () {}  
     public void viewPaymentInformation(){}
     public void attendMeeting() {
-        //Register attendance at meetingID, with personalID,
+        //Register attendance at meetingID, with userPersonalID,
         //adds to meeting array
     }
     public void viewMeetingNotes(){

@@ -19,14 +19,14 @@ public class Book implements Subject {
     //This is the string reference that can be used to route to the file in the html
     public String bookImageRef;
     //This is the ID of the first professional reviewer assigned to the book
-    public int profRID1;
+    public String profRID1;
     //This is the ID of the second professional reviewer assigned to the book
-    public int profRID2;
-    public int editorID;
-    public int authorID;
+    public String profRID2;
+    public String editorID;
+    public String authorID;
     public String authorName;
     //This is the ID of the agent who is assigned to deal with the book
-    public int agentID;
+    public String agentID;
     //This is the rating out of five the first professional reviewer gives to the book
     public int profR1Rating;
     //This is the rating out of five the second professional reviewer gives to the book
