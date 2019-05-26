@@ -107,9 +107,6 @@ footer {
     <header>
         <img align="left"  src="resources/images/logoS.jpg" alt="Logo" width="65" height="65" />
         <h1> EXE RIVER PUBLISHING </h1> 
-        <!--<button type="button" class="btn btn-secondary">
-        Notifications <span class="badge badge-dark">4</span>
-        </button>-->
     </header>
 <section>
   <nav>
@@ -140,30 +137,30 @@ footer {
         <p> Please enter the book information below:</p>
         <div>
             <h:outputLabel value="Book ID: " />
-            <h:inputText value="#{addBookBean.bookID}" />
+            <h:inputText value="#{AddBookBean.bookID}" />
         </div>
         <div>
             <h:outputLabel value="Book Title: " />
-            <h:inputText value="#{addBookBean.bookTitle}" />
+            <h:inputText value="#{AddBookBean.bookTitle}" />
         </div>
         <div>
             <h:outputLabel value="Book Image Reference: " />
-            <h:inputText value="#{addBookBean.bookImageRef}" />
+            <h:inputText value="#{AddBookBean.bookImageRef}" />
         </div>
         <div>
             <h:outputLabel value="Book Author Name: " />
-            <h:inputText value="#{addBookBean.bookAuthorName}" />
+            <h:inputText value="#{AddBookBean.bookAuthorName}" />
         </div>
         <div>
             <h:outputLabel value="Book Author ID: " />
-            <h:inputText value="#{addBookBean.bookAuthorID}" />
+            <h:inputText value="#{AddBookBean.bookAuthorID}" />
         </div>
                 <div>
             <h:outputLabel value="Book Agent ID: " />
-            <h:inputText value="#{addBookBean.bookAgentID}" />
+            <h:inputText value="#{AddBookBean.bookAgentID}" />
         </div>
         <div id="submitBtn">
-            <h:commandButton value="Submit" action="#{addBookBean.addBook}" />
+            <h:commandButton value="Submit" action="#{AddBookBean.addBook}" />
         </div>
         </h:form>
     </article>

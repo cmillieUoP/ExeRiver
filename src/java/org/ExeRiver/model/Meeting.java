@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Meeting implements Subject{
     //This is the unique meeting ID
-    private int meetingID;
+    private String meetingID;
     //This is a list of meeting attendees
     //The intention here is to source the list by people registering their attendance
     //private ArrayList meetingAttendees;
@@ -32,9 +32,70 @@ public class Meeting implements Subject{
     private ArrayList meetingObservers;
     
     //Code for observers to notify them of a change to the meeting notes
-    public Meeting() {
+    public Meeting(String meetingID, String meetingTitle, String meetingType, String meetingDate, String meetingNotes) {
+        
+        this.meetingID = meetingID;
+        this.meetingTitle = meetingTitle;
+        this.meetingType = meetingType;
+        this.meetingDate = meetingDate;
+        this.meetingNotes = meetingNotes;
+        
         meetingObservers = new ArrayList();
     }
+
+    public String getMeetingID() {
+        return meetingID;
+    }
+
+    public void setMeetingID(String meetingID) {
+        this.meetingID = meetingID;
+    }
+
+    public String getMeetingTitle() {
+        return meetingTitle;
+    }
+
+    public void setMeetingTitle(String meetingTitle) {
+        this.meetingTitle = meetingTitle;
+    }
+
+    public String getMeetingType() {
+        return meetingType;
+    }
+
+    public void setMeetingType(String meetingType) {
+        this.meetingType = meetingType;
+    }
+
+    public String getMeetingDate() {
+        return meetingDate;
+    }
+
+    public void setMeetingDate(String meetingDate) {
+        this.meetingDate = meetingDate;
+    }
+
+    public ArrayList getMeetingAttendees() {
+        return meetingAttendees;
+    }
+
+    public void setMeetingAttendees(ArrayList meetingAttendees) {
+        this.meetingAttendees = meetingAttendees;
+    }
+
+    public ArrayList getMeetingObservers() {
+        return meetingObservers;
+    }
+
+    public void setMeetingObservers(ArrayList meetingObservers) {
+        this.meetingObservers = meetingObservers;
+    }
+    
+    public void createMeeting() {
+        Meeting meetingOne = new Meeting("ME001", "Review of James and the Giant Peach", "Telephone", "01/04/2019", "TBC");
+        meetingOne.printMeetingDetails();
+    }
+
     @Override
     public void addObserver(Observer o){
         meetingObservers.add(o);
@@ -80,14 +141,6 @@ public class Meeting implements Subject{
         System.out.println("Meeting Type is: " + meetingType);
         System.out.println("Date of the Meeting is: " + meetingDate);
         }
-    
-    public void createMeeting(){
-       Meeting meetingOne = new Meeting();
-       meetingOne.meetingTitle = "Review of James and the Giant Peach";
-       meetingOne.meetingType = "Telephone";
-       meetingOne.meetingDate = "01/04/2019";
-       meetingOne.printMeetingDetails();
-    }
     
     
 }

@@ -11,7 +11,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -19,7 +18,7 @@ import static org.junit.Assert.*;
  */
 public class TestCreatorMethods {
 
-    private Subject book;
+    //private Subject book;
     
     public TestCreatorMethods() {
     }
@@ -68,7 +67,7 @@ public class TestCreatorMethods {
     //Creating Subjects
     @Test
     public void testCreateBook() {
-        Book bookOne = new Book();
+        Book bookOne = new Book("B0001", "James and the Giant Peach", "PR001", "PR002", "E001", "AU001", "Roald Dahl", "AG001");
         bookOne.createBook();
     }
     @Test
@@ -76,12 +75,13 @@ public class TestCreatorMethods {
         BookRevision bookROne = new BookRevision();
         bookROne.createBookRevision();
     }
-    
+
     @Test
     public void testCreateMeeting() {
-        Meeting meetingOne = new Meeting();
+        Meeting meetingOne = new Meeting("ME001", "Review of James and the Giant Peach", "Telephone", "01/04/2019", "TBC");
         meetingOne.createMeeting();
     }
+
     
     @Test
     public void testCreatePayment() {

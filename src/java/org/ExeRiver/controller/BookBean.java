@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
 package org.ExeRiver.controller;
 
 import javax.faces.bean.ManagedBean;
@@ -18,9 +20,7 @@ import org.ExeRiver.model.Book;
 @ManagedBean
 @RequestScoped
 public class BookBean {
-    /**
-     * Creates a new instance of BookBean
-     */   
+/*
     private List<Book> books;
     
     public BookBean() {
@@ -28,12 +28,12 @@ public class BookBean {
         books.add(new Book());
         books.add(new Book());
         
-        //add more cars
+        //add more books
         }
     public List<Book> getBooks() {
     return books;
     }
-        
+*/        
 }
     
 

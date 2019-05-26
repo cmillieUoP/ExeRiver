@@ -56,7 +56,7 @@ public class Book implements Subject {
     //private Image bookCover = ;
     private ArrayList bookObservers;
     
-    public Book() {
+    public Book(String bookID, String bookTitle, String profRID1, String profRID2,String editorID, String authorID, String authorName, String agentID) {
         bookObservers = new ArrayList();
         books = new ArrayList<>();
     }
@@ -116,16 +116,11 @@ public class Book implements Subject {
         }
     
     public void createBook(){
-       Book bookOne = new Book();
-       bookOne.bookID = "B0001";
-       bookOne.bookTitle = "James and the Giant Peach";
-       bookOne.authorName = "Roald Dahl";
+       Book bookOne = new Book("B0001", "James and the Giant Peach", "PR001", "PR002", "E001", "AU001", "Roald Dahl", "AG001");
        bookOne.bookImageRef = "JATGP.jpg";
        bookOne.printBookDetails(); 
-       Book bookTwo = new Book();
+       Book bookTwo = new Book("B0002", "The Twits", "PR001", "PR002", "E001", "AU001", "Roald Dahl", "AG001");
        bookTwo.bookID = "B0002";
-       bookTwo.bookTitle = "The Twits";
-       bookTwo.authorName = "Roald Dahl";
        bookTwo.bookImageRef = "Twits.jpg";
        bookTwo.printBookDetails(); 
     }

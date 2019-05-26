@@ -135,37 +135,29 @@ footer {
     </ul>
   </nav>
     <article>
-        <h:form id="addMeetingForm">
-        <h2>Add Meeting</h2>
-        <p> Please enter the meeting information below:</p>
-        <div>
-            <h:outputLabel value="Meeting ID (ME###): " />
-            <h:inputText value="#{AddMeetingBean.meetingID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Meeting Title: " />
-            <h:inputText value="#{AddMeetingBean.meetingTitle}" />
-        </div>
-        <div>
-            <h:outputLabel value="Meeting Type (F2F/Telephone): " />
-            <h:inputText value="#{AddMeetingBean.meetingType}" />
-        </div>
-        <div>
-            <h:outputLabel value="Meeting Date (DD/MM/YYYY): " />
-            <h:inputText value="#{AddMeetingBean.meetingDate}" />
-        </div>
-        <div>
-            <h:outputLabel value="Meeting Notes: " />
-            <h:inputText value="#{AddMeetingBean.meetingNotes}" />
-        </div>
-        <div>
-            <h:outputLabel value="Meeting Attendees: " />
-            <h:inputText value="#{AddMeetingBean.meetingAttendees}" />
-        </div>
-        <div id="submitBtn">
-            <h:commandButton value="Submit" action="#{AddMeetingBean.AddMeeting}" />
-        </div>
-        </h:form>
+        <h2><h:outputText value="Meeting List"></h:outputText></h2>  
+        <h:dataTable value="#{meeting.meetingsList}" var="m" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+            <h:column>  
+                <f:facet name="header">ID</f:facet>  
+                <h:outputText value="#{m.meetingID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Title</f:facet>  
+                <h:outputText value="#{m.meetingTitle}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Type</f:facet>  
+                <h:outputText value="#{m.meetingType}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Date</f:facet>  
+                <h:outputText value="#{m.meetingDate}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Notes</f:facet>  
+                <h:outputText value="#{m.meetingNotes}"/>  
+            </h:column>
+        </h:dataTable>  
     </article>
     
 </section>
