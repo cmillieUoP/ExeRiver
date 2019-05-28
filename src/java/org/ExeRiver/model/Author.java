@@ -20,10 +20,64 @@ public Subject meeting;
 public Subject payment;
         
     //This is the constructor for an author
-    public Author(/*Subject book*/){
-        //this.book = book;
-        //book.addObserver(this);
-        }
+    public Author(String personalID, String forename, String surname, String address, String username, String password) {
+        this.personalID = personalID;
+        this.forename = forename;
+        this.surname = surname;
+        this.address = address;
+        this.username = username;
+        this.password = password;
+    }
+
+    public String getPersonalID() {
+        return personalID;
+    }
+
+    public void setPersonalID(String personalID) {
+        this.personalID = personalID;
+    }
+
+    public String getForename() {
+        return forename;
+    }
+
+    public void setForename(String forename) {
+        this.forename = forename;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
     //These are the methods for adding the author as an observer
     //to these subjects
     public void assignBook(Subject book){
@@ -64,21 +118,9 @@ public Subject payment;
         }
 
         public void createAuthor() {
-        Author authorOne = new Author();
-        authorOne.personalID = "AU0001";
-        authorOne.forename = "Roald";
-        authorOne.surname = "Dahl";
-        authorOne.address = "83 High Street, Great Missenden";
-        authorOne.username = "RDahl";
-        authorOne.password = "WillyWonka";
+        Author authorOne = new Author("AU0001", "Roald", "Dahl", "83 High Street, Great Missenden", "RDahl", "WillyWonka");
         authorOne.printAuthorDetails();
-        Author authorTwo = new Author();
-        authorTwo.personalID = "AU0002";
-        authorTwo.forename = "Daphne";
-        authorTwo.surname = "Du Maurier";
-        authorTwo.address = "Jamaica Inn, Bolventor, Launceston";
-        authorTwo.username = "DDMaurier";
-        authorTwo.password = "MaximDeWinter";
+        Author authorTwo = new Author("AU0002", "Daphne", "Du Maurier", "Jamaica Inn, Bolventor, Launceston", "DDMaurier", "MaximDeWinter");
         authorTwo.printAuthorDetails();
         }
         public void printAuthorDetails(){

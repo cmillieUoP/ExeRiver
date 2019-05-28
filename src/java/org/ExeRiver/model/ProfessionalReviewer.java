@@ -19,8 +19,63 @@ public class ProfessionalReviewer extends User{
     public Subject meeting;
     public Subject payment;
     
-    public ProfessionalReviewer(){
-        }
+    public ProfessionalReviewer(String personalID, String forename, String surname, String address, String username, String password) {
+        this.personalID = personalID;
+        this.forename = forename;
+        this.surname = surname;
+        this.address = address;
+        this.username = username;
+        this.password = password;
+    }
+
+    public String getPersonalID() {
+        return personalID;
+    }
+
+    public void setPersonalID(String personalID) {
+        this.personalID = personalID;
+    }
+
+    public String getForename() {
+        return forename;
+    }
+
+    public void setForename(String forename) {
+        this.forename = forename;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
     //These are the methods for adding the professional
     //reviewer as an observer to these subjects
     public void assignBook(Subject book){
@@ -60,21 +115,9 @@ public class ProfessionalReviewer extends User{
     }
     
     public void createProfReviewer() {
-        ProfessionalReviewer PROne = new ProfessionalReviewer();
-        PROne.personalID = "PR0001";
-        PROne.forename = "Dylan";
-        PROne.surname = "Pratt";
-        PROne.address = "67 Park Row, Edstone";
-        PROne.username = "DPratt";
-        PROne.password = "PagesOfBooks";
+        ProfessionalReviewer PROne = new ProfessionalReviewer("PR0001","Dylan","Pratt","67 Park Row, Edstone","DPratt","PagesOfBooks");
         PROne.printPRDetails();
-        ProfessionalReviewer PRTwo = new ProfessionalReviewer();
-        PRTwo.personalID = "PR0002";
-        PRTwo.forename = "Emma";
-        PRTwo.surname = "Marshall";
-        PRTwo.address = "18 Fosse Way, Ardelve";
-        PRTwo.username = "EMarshall";
-        PRTwo.password = "TreesMakePages";
+        ProfessionalReviewer PRTwo = new ProfessionalReviewer("PR0002","Emma","Marshall","18 Fosse Way, Ardelve","EMarshall","TreesMakePages");
         PRTwo.printPRDetails();
         }
     public void printPRDetails(){

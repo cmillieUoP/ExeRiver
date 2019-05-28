@@ -24,9 +24,65 @@ public class Agent extends User{
         //input when PR is no longer registered to book
         //https://www.dummies.com/programming/java/use-array-lists-in-java/
     }
-    public Agent() {
-        
+    public Agent(String personalID, String forename, String surname, String address, String username, String password) {
+        this.personalID = personalID;
+        this.forename = forename;
+        this.surname = surname;
+        this.address = address;
+        this.username = username;
+        this.password = password;
     }
+
+    public String getPersonalID() {
+        return personalID;
+    }
+
+    public void setPersonalID(String personalID) {
+        this.personalID = personalID;
+    }
+
+    public String getForename() {
+        return forename;
+    }
+
+    public void setForename(String forename) {
+        this.forename = forename;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
+
     //These are the methods for adding the agent as an observer
     //to these subjects
     public void assignBook(Subject book){
@@ -59,13 +115,7 @@ public class Agent extends User{
         }
         
         public void createAgent() {
-        Agent agentOne = new Agent();
-        agentOne.personalID = "AG0001";
-        agentOne.forename = "Adrian";
-        agentOne.surname = "Gent";
-        agentOne.address = "42 Walberry Road, Umlin";
-        agentOne.username = "AGent";
-        agentOne.password = "WriteMeABook";
+        Agent agentOne = new Agent("AG0001", "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook");
         agentOne.printAgentDetails();
         }
         

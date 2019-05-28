@@ -163,7 +163,10 @@ footer {
             <h:inputText value="#{AddMeetingBean.meetingAttendees}" />
         </div>
         <div id="submitBtn">
-            <h:commandButton value="Submit" action="#{AddMeetingBean.AddMeeting}" />
+            <h:commandButton value="Submit" action="#{AddMeetingBean.addMeeting}"/>
+        </div>
+        <div id="showMeetingBtn">
+            <h:commandButton value="Show Meeting" action="showMeeting.xhtml"/>
         </div>
         </h:form>
     </article>

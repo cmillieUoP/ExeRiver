@@ -135,42 +135,38 @@ footer {
     </ul>
   </nav>
     <article>
-        <h:form id="addPaymentForm">
-        <h2>Add Payment</h2>
-        <p> Please enter the payment information below:</p>
+        <h:form id="addAuthorForm">
+        <h2>Add Author</h2>
+        <p> Please enter the Author information below:</p>
         <div>
-            <h:outputLabel value="Payment ID: " />
-            <h:inputText value="#{AddPaymentBean.paymentID}" />
+            <h:outputLabel value="ID: " />
+            <h:inputText value="#{AddAuthorBean.personalID}" />
         </div>
         <div>
-            <h:outputLabel value="Editor ID: " />
-            <h:inputText value="#{AddPaymentBean.editorID}" />
+            <h:outputLabel value="Forename: " />
+            <h:inputText value="#{AddAuthorBean.forename}" />
         </div>
         <div>
-            <h:outputLabel value="Agent ID: " />
-            <h:inputText value="#{AddPaymentBean.agentID}" />
+            <h:outputLabel value="Surname: " />
+            <h:inputText value="#{AddAuthorBean.surname}" />
         </div>
         <div>
-            <h:outputLabel value="Author ID: " />
-            <h:inputText value="#{AddPaymentBean.authorID}" />
+            <h:outputLabel value="Address: " />
+            <h:inputText value="#{AddAuthorBean.address}" />
         </div>
         <div>
-            <h:outputLabel value="Book ID: " />
-            <h:inputText value="#{AddPaymentBean.bookID}" />
+            <h:outputLabel value="Username: " />
+            <h:inputText value="#{AddAuthorBean.username}" />
         </div>
         <div>
-            <h:outputLabel value="Payment Amount: " />
-            <h:inputText value="#{AddPaymentBean.paymentAmount}" />
-        </div>
-        <div>
-            <h:outputLabel value="Payment Complete (True/False): " />
-            <h:inputText value="#{AddPaymentBean.paymentComplete}" />
+            <h:outputLabel value="Password: " />
+            <h:inputText value="#{AddAuthorBean.password}" />
         </div>
         <div id="submitBtn">
-            <h:commandButton value="Submit" action="#{AddMeetingBean.addMeeting}"/>
+            <h:commandButton value="Submit" action="#{AddAuthorBean.addAuthor}"/>
         </div>
         <div id="showPaymentBtn">
-            <h:commandButton value="Show Payment" action="showPayment.xhtml"/>
+            <h:commandButton value="Show Author" action="showAuthor.xhtml"/>
         </div>
         </h:form>
     </article>

@@ -20,9 +20,63 @@ public class Editor extends User{
     public Subject meeting;
     public Subject payment;
     
-    public Editor(){
-      
+    public Editor(String personalID, String forename, String surname, String address, String username, String password) {
+        this.personalID = personalID;
+        this.forename = forename;
+        this.surname = surname;
+        this.address = address;
+        this.username = username;
+        this.password = password;
     }
+
+    public String getPersonalID() {
+        return personalID;
+    }
+
+    public void setPersonalID(String personalID) {
+        this.personalID = personalID;
+    }
+
+    public String getForename() {
+        return forename;
+    }
+
+    public void setForename(String forename) {
+        this.forename = forename;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
     //These are the methods for adding the editor as an observer
     //to these subjects
     public void assignBook(Subject book){
@@ -57,13 +111,7 @@ public class Editor extends User{
     //will be updated in the editor observer.
     
     public void createEditor() {
-        Editor editorOne = new Editor();
-        editorOne.personalID = "AU0001";
-        editorOne.forename = "Laura";
-        editorOne.surname = "Phillips";
-        editorOne.address = "15 Circle Way, Caldecott";
-        editorOne.username = "LPhillips";
-        editorOne.password = "IReadBooks";
+        Editor editorOne = new Editor("E0001","Laura", "Phillips", "15 Circle Way, Caldecott", "LPhillips", "IReadBooks");
         editorOne.printEditorDetails();
         }
         public void printEditorDetails(){

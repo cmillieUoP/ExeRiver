@@ -42,25 +42,25 @@ public class TestCreatorMethods {
     //Creating observers
     @Test
     public void testCreateAuthor() {
-        Author authorOne = new Author();
+        Author authorOne = new Author("AU0001", "Roald", "Dahl", "83 High Street, Great Missenden", "RDahl", "WillyWonka");
         authorOne.createAuthor();
     }
     
     @Test
     public void testCreateAgent() {
-        Agent agentOne = new Agent();
+        Agent agentOne = new Agent("AG0001", "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook");
         agentOne.createAgent();
     }
     
     @Test
     public void testCreateEditor() {
-        Editor editorOne = new Editor();
+        Editor editorOne = new Editor("AU0001","Laura", "Phillips", "15 Circle Way, Caldecott", "LPhillips", "IReadBooks");
         editorOne.createEditor();
     }
     
     @Test
     public void testCreateProfReviewer() {
-        ProfessionalReviewer PROne = new ProfessionalReviewer();
+        ProfessionalReviewer PROne = new ProfessionalReviewer("PR0001","Dylan","Pratt","67 Park Row, Edstone","DPratt","PagesOfBooks");
         PROne.createProfReviewer();
     }
     
@@ -85,7 +85,7 @@ public class TestCreatorMethods {
     
     @Test
     public void testCreatePayment() {
-        Payment paymentOne = new Payment();
+        Payment paymentOne = new Payment("P001", "E001", "AG001", "AU001", "B0001", 100.00, false);
         paymentOne.createPayment();
     }
 }

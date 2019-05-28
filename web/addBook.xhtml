@@ -144,23 +144,34 @@ footer {
             <h:inputText value="#{AddBookBean.bookTitle}" />
         </div>
         <div>
-            <h:outputLabel value="Book Image Reference: " />
-            <h:inputText value="#{AddBookBean.bookImageRef}" />
+            <h:outputLabel value="Book Professional Reviewer ID 1: " />
+            <h:inputText value="#{AddBookBean.profRID1}" />
+        </div>
+        <div>
+            <h:outputLabel value="Book Professional Reviewer ID 2: " />
+            <h:inputText value="#{AddBookBean.profRID2}" />
         </div>
         <div>
             <h:outputLabel value="Book Author Name: " />
-            <h:inputText value="#{AddBookBean.bookAuthorName}" />
+            <h:inputText value="#{AddBookBean.authorName}" />
         </div>
         <div>
             <h:outputLabel value="Book Author ID: " />
-            <h:inputText value="#{AddBookBean.bookAuthorID}" />
+            <h:inputText value="#{AddBookBean.authorID}" />
+        </div>
+        <div>
+            <h:outputLabel value="Book Editor ID: " />
+            <h:inputText value="#{AddBookBean.editorID}" />
         </div>
                 <div>
             <h:outputLabel value="Book Agent ID: " />
-            <h:inputText value="#{AddBookBean.bookAgentID}" />
+            <h:inputText value="#{AddBookBean.agentID}" />
         </div>
         <div id="submitBtn">
             <h:commandButton value="Submit" action="#{AddBookBean.addBook}" />
+        </div>
+        <div id="showBookBtn">
+            <h:commandButton value="Show Book" action="showBook.xhtml"/>
         </div>
         </h:form>
     </article>

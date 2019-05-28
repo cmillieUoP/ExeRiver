@@ -57,9 +57,83 @@ public class Book implements Subject {
     private ArrayList bookObservers;
     
     public Book(String bookID, String bookTitle, String profRID1, String profRID2,String editorID, String authorID, String authorName, String agentID) {
+        this.bookID = bookID;
+        this.bookTitle = bookTitle;
+        this.profRID1 = profRID1;
+        this.profRID2 = profRID2;
+        this.editorID = editorID;
+        this.authorID = authorID;
+        this.authorName = authorName;
+        this.agentID = agentID;
         bookObservers = new ArrayList();
         books = new ArrayList<>();
     }
+
+    public String getBookID() {
+        return bookID;
+    }
+
+    public void setBookID(String bookID) {
+        this.bookID = bookID;
+    }
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+
+    public String getProfRID1() {
+        return profRID1;
+    }
+
+    public void setProfRID1(String profRID1) {
+        this.profRID1 = profRID1;
+    }
+
+    public String getProfRID2() {
+        return profRID2;
+    }
+
+    public void setProfRID2(String profRID2) {
+        this.profRID2 = profRID2;
+    }
+
+    public String getEditorID() {
+        return editorID;
+    }
+
+    public void setEditorID(String editorID) {
+        this.editorID = editorID;
+    }
+
+    public String getAuthorID() {
+        return authorID;
+    }
+
+    public void setAuthorID(String authorID) {
+        this.authorID = authorID;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getAgentID() {
+        return agentID;
+    }
+
+    public void setAgentID(String agentID) {
+        this.agentID = agentID;
+    }
+    
+    
     
     public List<Book> getList() {
         return books;
