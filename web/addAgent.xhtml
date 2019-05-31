@@ -89,7 +89,7 @@ footer {
   text-align: center;
   color: #4c0200;
   outline: 1px solid darkgray;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 }
@@ -165,16 +165,41 @@ footer {
         <div id="submitBtn">
             <h:commandButton value="Submit" action="#{AddAgentBean.addAgent}"/>
         </div>
-        <div id="showPaymentBtn">
-            <h:commandButton value="Show Agent" action="showAgent.xhtml"/>
-        </div>
         </h:form>
+        
+        <h2><h:outputText value="Agent List"></h:outputText></h2>  
+        <h:dataTable value="#{AddAgentBean.agentsList}" var="a" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+            <h:column>  
+                <f:facet name="header">Personal ID</f:facet>  
+                <h:outputText value="#{a.personalID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Forename</f:facet>  
+                <h:outputText value="#{a.forename}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Surname</f:facet>  
+                <h:outputText value="#{a.surname}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Address</f:facet>  
+                <h:outputText value="#{a.address}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Username</f:facet>  
+                <h:outputText value="#{a.username}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Password</f:facet>  
+                <h:outputText value="#{a.password}"/>  
+            </h:column>
+        </h:dataTable> 
     </article>
     
 </section>
-    <footer>
+<footer>
         Copyright Exe River Publishing 2019
-    </footer>
+</footer>
 
 </body>
 </html>

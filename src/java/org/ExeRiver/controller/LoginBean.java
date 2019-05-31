@@ -42,15 +42,15 @@ public class LoginBean {
     public String validateUserLogin() {
         String navResult = "";
         System.out.println("Entered Username is= " + userName + ", password is= " + password);
-        if (userName.equals("AgentUsername") && password.equals("AgentPassword")) {
+        if (userName.equals("Agent") && password.equals("Agent")) {
             navResult = "success";}
-        else if (userName.equals("AuthorUsername") && password.equals("AuthorPassword")) {
+        else if (userName.equals("Author") && password.equals("Author")) {
             navResult = "success"; }
-        else if (userName.equals("CompanyAdminUsername") && password.equals("CompanyAdminPassword")) {
+        else if (userName.equals("Admin") && password.equals("Admin")) {
+            navResult = "adminSuccess"; }
+        else if (userName.equals("Editor") && password.equals("Editor")) {
             navResult = "success"; }
-        else if (userName.equals("EditorUsername") && password.equals("EditorPassword")) {
-            navResult = "success"; }
-        else if (userName.equals("ProfReviewerUsername") && password.equals("ProfReviewerPassword")) {
+        else if (userName.equals("ProfReviewer") && password.equals("ProfReviewer")) {
             navResult = "success"; }
          else {
             navResult = "failure";

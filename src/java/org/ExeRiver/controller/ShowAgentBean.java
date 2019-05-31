@@ -19,10 +19,13 @@ import org.ExeRiver.model.Agent;
 @ManagedBean(name = "agent")  
 @RequestScoped  
 public class ShowAgentBean {    
-public List<Agent> agentsList;  
-public List<Agent> getAgentsList() {    
-agentsList = new ArrayList<>();    
-agentsList.add(new Agent("AG0001", "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook"));       
-return agentsList;  
-}    
+
+    public List<Agent> agentsList;
+
+    public List<Agent> getAgentsList() {    
+    agentsList = new ArrayList<>();    
+    agentsList.add(new Agent("AG0001", "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook"));
+    agentsList.add(new Agent("AG0001", "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook"));
+    return agentsList;  
+    }    
 }  

@@ -13,6 +13,11 @@
         </navigation-case>
         <navigation-case>
             <from-action>#{loginBean.validateUserLogin}</from-action>
+            <from-outcome>adminSuccess</from-outcome>
+            <to-view-id>/adminMain.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{loginBean.validateUserLogin}</from-action>
             <from-outcome>failure</from-outcome>
             <to-view-id>/failure.xhtml</to-view-id>
         </navigation-case>

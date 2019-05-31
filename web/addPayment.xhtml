@@ -89,7 +89,7 @@ footer {
   text-align: center;
   color: #4c0200;
   outline: 1px solid darkgray;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 }
@@ -169,16 +169,45 @@ footer {
         <div id="submitBtn">
             <h:commandButton value="Submit" action="#{AddMeetingBean.addMeeting}"/>
         </div>
-        <div id="showPaymentBtn">
-            <h:commandButton value="Show Payment" action="showPayment.xhtml"/>
-        </div>
         </h:form>
+        
+        <h2><h:outputText value="Payment List"></h:outputText></h2>  
+        <h:dataTable value="#{payment.paymentsList}" var="p" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+            <h:column>  
+                <f:facet name="header">Payment ID</f:facet>  
+                <h:outputText value="#{p.paymentID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Editor ID</f:facet>  
+                <h:outputText value="#{p.editorID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Agent ID</f:facet>  
+                <h:outputText value="#{p.agentID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Author ID</f:facet>  
+                <h:outputText value="#{p.authorID}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Book ID</f:facet>  
+                <h:outputText value="#{p.bookID}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Payment Amount</f:facet>  
+                <h:outputText value="#{p.amount}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Completion Status</f:facet>  
+                <h:outputText value="#{p.complete}"/>  
+            </h:column>
+        </h:dataTable>  
     </article>
     
 </section>
-    <footer>
+<footer>
         Copyright Exe River Publishing 2019
-    </footer>
+</footer>
 
 </body>
 </html>

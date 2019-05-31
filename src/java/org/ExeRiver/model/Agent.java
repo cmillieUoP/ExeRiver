@@ -12,6 +12,9 @@ package org.ExeRiver.model;
 import java.util.ArrayList;
 
 public class Agent extends User{
+    private ArrayList agentsList;
+
+
        
     //This is a list of authorsRepresenting
     //The intention here is to source the list by authors the agent has been assigned to
@@ -32,7 +35,9 @@ public class Agent extends User{
         this.username = username;
         this.password = password;
     }
-
+    public Agent(){
+    }
+    
     public String getPersonalID() {
         return personalID;
     }
@@ -80,8 +85,16 @@ public class Agent extends User{
     public void setUsername(String username) {
         this.username = username;
     }
-    
-    
+    public ArrayList getAgentsList() {
+        return agentsList;
+    }
+
+    public void setAgentsList(ArrayList agentsList) {
+        this.agentsList = agentsList;
+    }
+    public void saveAgent(Agent agent){
+       agentsList.add(agent);
+    }
 
     //These are the methods for adding the agent as an observer
     //to these subjects
@@ -124,4 +137,6 @@ public class Agent extends User{
             System.out.println("Agent address is: " + address);
             System.out.println("Agent password is: " + password + " ...Sshhh");
         }
+        
+    
 }

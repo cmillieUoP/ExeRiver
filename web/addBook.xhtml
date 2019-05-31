@@ -89,7 +89,7 @@ footer {
   text-align: center;
   color: #4c0200;
   outline: 1px solid darkgray;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 }
@@ -107,6 +107,9 @@ footer {
     <header>
         <img align="left"  src="resources/images/logoS.jpg" alt="Logo" width="65" height="65" />
         <h1> EXE RIVER PUBLISHING </h1> 
+        <!--<button type="button" class="btn btn-secondary">
+        Notifications <span class="badge badge-dark">4</span>
+        </button>-->
     </header>
 <section>
   <nav>
@@ -144,42 +147,75 @@ footer {
             <h:inputText value="#{AddBookBean.bookTitle}" />
         </div>
         <div>
-            <h:outputLabel value="Book Professional Reviewer ID 1: " />
+            <h:outputLabel value="Reviewer ID 1: " />
             <h:inputText value="#{AddBookBean.profRID1}" />
         </div>
         <div>
-            <h:outputLabel value="Book Professional Reviewer ID 2: " />
+            <h:outputLabel value="Reviewer ID 2: " />
             <h:inputText value="#{AddBookBean.profRID2}" />
         </div>
         <div>
-            <h:outputLabel value="Book Author Name: " />
+            <h:outputLabel value="Author Name: " />
             <h:inputText value="#{AddBookBean.authorName}" />
         </div>
         <div>
-            <h:outputLabel value="Book Author ID: " />
+            <h:outputLabel value="Author ID: " />
             <h:inputText value="#{AddBookBean.authorID}" />
         </div>
         <div>
-            <h:outputLabel value="Book Editor ID: " />
+            <h:outputLabel value="Editor ID: " />
             <h:inputText value="#{AddBookBean.editorID}" />
         </div>
                 <div>
-            <h:outputLabel value="Book Agent ID: " />
+            <h:outputLabel value="Agent ID: " />
             <h:inputText value="#{AddBookBean.agentID}" />
         </div>
         <div id="submitBtn">
             <h:commandButton value="Submit" action="#{AddBookBean.addBook}" />
         </div>
-        <div id="showBookBtn">
-            <h:commandButton value="Show Book" action="showBook.xhtml"/>
-        </div>
         </h:form>
+        
+        <h2><h:outputText value="Book List"></h:outputText></h2>  
+        <h:dataTable value="#{book.booksList}" var="b" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+            <h:column>  
+                <f:facet name="header">ID</f:facet>  
+                <h:outputText value="#{b.bookID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Title</f:facet>  
+                <h:outputText value="#{b.bookTitle}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Reviewer ID 1</f:facet>  
+                <h:outputText value="#{b.profRID1}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Reviewer ID 2</f:facet>  
+                <h:outputText value="#{b.profRID2}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Editor ID</f:facet>  
+                <h:outputText value="#{b.editorID}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Author ID</f:facet>  
+                <h:outputText value="#{b.authorID}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Author Name</f:facet>  
+                <h:outputText value="#{b.authorName}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Agent ID</f:facet>  
+                <h:outputText value="#{b.agentID}"/>  
+            </h:column>
+        </h:dataTable> 
     </article>
     
 </section>
-    <footer>
+<footer>
         Copyright Exe River Publishing 2019
-    </footer>
+</footer>
 
 </body>
 </html>
