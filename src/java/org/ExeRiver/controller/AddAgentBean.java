@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import org.ExeRiver.model.Agent;
 /**
@@ -31,21 +30,45 @@ public class AddAgentBean {
     
     @PostConstruct
     public void init() {
-        agentsList = new ArrayList<Agent>();
+        agentsList = new ArrayList<>();
+        //Creates preset agent entries
         agent =new Agent("AG0001", "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook");
         agentsList.add(agent);
         
         agent = new Agent();
         agent = new Agent("AG0002", "Richard", "Atkins", "101 Smith Road, Umlin", "AGent", "WriteMeABook");
         agentsList.add(agent);
+        
         agent = new Agent();
-        agent.setAgentsList((ArrayList<Agent>) agentsList);//save to the model list
+        //Saves entry to the model list
+        agent.setAgentsList((ArrayList<Agent>) agentsList);
+        //Resets the data entry for the next submission
         resetAdd();
     }
-
+    
     public AddAgentBean() {
     }
 
+    public void addAgent(){
+        agent = new Agent();
+        agent = new Agent(this.personalID,this.forename, this.surname, this.address, this.username, this.password);
+        agentsList.add(agent);
+        //Saves entry to the model list
+        agent.setAgentsList((ArrayList<Agent>) agentsList);
+        //Resets the data entry for the next submission
+        agent = new Agent();
+        resetAdd();
+    }
+ 
+    public List<Agent> getAgentsList() {
+         return agentsList;
+    }
+    public void resetAdd()
+    {
+        agent = new Agent();
+    }
+    
+    //Gets and sets
     public String getPersonalID() {
         return personalID;
     }
@@ -101,35 +124,5 @@ public class AddAgentBean {
     public void setAgent(Agent agent) {
         this.agent = agent;
     }
-    
-    public void addAgent(){
-//        agent = new Agent("1", "forename", "surname", "address", "username", "password");
-        agent = new Agent();
-        agent = new Agent(this.personalID,this.forename, this.surname, this.address, this.username, this.password);
-        
-        agentsList.add(agent);
-        agent.setAgentsList((ArrayList<Agent>) agentsList);//save to the model list
-        agent = new Agent();
-        resetAdd();
-    }
- 
-    public List<Agent> getAgentsList() {
-        //agentsList = new ArrayList<>();
-        //agentsList.add(new Agent(agent.personalID, "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook"));
-        return agentsList;
-    }
-    public void resetAdd()
-    {
-        agent = new Agent();
-//        this.password = null;
-//        this.username=null;
-//        this.forename=null;
-//        this.surname=null;
-//        this.personalID=null;
-//        this.address=null;
-//        this.agent = new Agent();
-//        agent = new Agent();;
-    }
-}  
-    
 
+}

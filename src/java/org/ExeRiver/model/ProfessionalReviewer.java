@@ -12,6 +12,7 @@ package org.ExeRiver.model;
 import java.util.ArrayList;
 
 public class ProfessionalReviewer extends User{
+    private ArrayList profReviewersList;    
     //This is a list of booksReviewed
     //The intention here is to source the list by books the PR has been assigned to
     public ArrayList booksReviewed;
@@ -27,7 +28,11 @@ public class ProfessionalReviewer extends User{
         this.username = username;
         this.password = password;
     }
-
+    
+    public ProfessionalReviewer(){
+    }
+    
+    //Gets and Sets       
     public String getPersonalID() {
         return personalID;
     }
@@ -75,7 +80,18 @@ public class ProfessionalReviewer extends User{
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public ArrayList getProfReviewersList() {
+        return profReviewersList;
+    }
+
+    public void setProfReviewersList(ArrayList profReviewersList) {
+        this.profReviewersList = profReviewersList;
+    }
     
+    public void saveAgent(ProfessionalReviewer profReviewer){
+       profReviewersList.add(profReviewer);
+    }
     //These are the methods for adding the professional
     //reviewer as an observer to these subjects
     public void assignBook(Subject book){
@@ -99,7 +115,7 @@ public class ProfessionalReviewer extends User{
     }
     
     @Override
-    public void updatePaymentDetails(float amount, boolean complete){
+    public void updatePaymentDetails(double amount, boolean complete){
 
     }
     @Override

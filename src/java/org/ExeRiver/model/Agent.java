@@ -13,17 +13,15 @@ import java.util.ArrayList;
 
 public class Agent extends User{
     private ArrayList agentsList;
-
-
-       
     //This is a list of authorsRepresenting
     //The intention here is to source the list by authors the agent has been assigned to
     private ArrayList authorsRepresenting;
+    
     public void addAuthorsRepresenting() {
         authorsRepresenting = new ArrayList();
-        authorsRepresenting.add("roger");
+        authorsRepresenting.add(" ");
         //input when registered to book
-        authorsRepresenting.remove("roger");
+        authorsRepresenting.remove(" ");
         //input when PR is no longer registered to book
         //https://www.dummies.com/programming/java/use-array-lists-in-java/
     }
@@ -35,9 +33,11 @@ public class Agent extends User{
         this.username = username;
         this.password = password;
     }
+    
     public Agent(){
     }
     
+    //Gets and Sets
     public String getPersonalID() {
         return personalID;
     }
@@ -119,7 +119,7 @@ public class Agent extends User{
             
         }
         @Override
-        public void updatePaymentDetails(float amount, boolean complete){
+        public void updatePaymentDetails(double amount, boolean complete){
             
         }
         @Override
@@ -127,16 +127,16 @@ public class Agent extends User{
 
         }
         
-        public void createAgent() {
-        Agent agentOne = new Agent("AG0001", "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook");
+    public void createAgent() {
+        Agent agentOne = new Agent();
         agentOne.printAgentDetails();
-        }
-        
-        public void printAgentDetails(){
-            System.out.println("Agent name is: " + forename + " " + surname);
-            System.out.println("Agent address is: " + address);
-            System.out.println("Agent password is: " + password + " ...Sshhh");
-        }
+    }
+
+    public void printAgentDetails() {
+        System.out.println("Agent name is: " + forename + " " + surname);
+        System.out.println("Agent address is: " + address);
+        System.out.println("Agent password is: " + password + " ...Sshhh");
+    }
         
     
 }

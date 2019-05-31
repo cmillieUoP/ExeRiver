@@ -27,6 +27,7 @@ public class Payment implements Subject{
     private double amount;
     //This marks whether the payment is complete and agreed or still pending
     private boolean complete;
+    private ArrayList paymentsList;
     
     private ArrayList paymentObservers;
     
@@ -41,7 +42,11 @@ public class Payment implements Subject{
         
         paymentObservers = new ArrayList();
     }
+    
+    public Payment(){
+    }
 
+    //Gets and Sets
     public String getPaymentID() {
         return paymentID;
     }
@@ -79,6 +84,16 @@ public class Payment implements Subject{
         this.complete = complete;
     }
     
+    
+
+    public ArrayList getPaymentsList() {
+        return paymentsList;
+    }
+
+    public void setPaymentsList(ArrayList paymentsList) {
+        this.paymentsList = paymentsList;
+    }
+    
     @Override
     public void addObserver(Observer o){
         paymentObservers.add(o);
@@ -96,7 +111,7 @@ public class Payment implements Subject{
     public void notifyObservers(){
        for (int i = 0; i < paymentObservers.size(); i++) {
            Observer observer = (Observer)paymentObservers.get(i);
-           //observer.updatePaymentDetails(amount, complete);
+           observer.updatePaymentDetails(amount, complete);
        } 
     }
     
@@ -119,7 +134,7 @@ public class Payment implements Subject{
     } 
     
     public void createPayment(){
-       Payment paymentOne = new Payment("P001", "E001", "AG001", "AU001", "B0001", 100.00, false);
+       Payment paymentOne = new Payment();
        paymentOne.printPaymentDetails(); 
     }
     public void printPaymentDetails(){

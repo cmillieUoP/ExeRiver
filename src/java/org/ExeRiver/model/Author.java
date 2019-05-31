@@ -12,7 +12,8 @@ package org.ExeRiver.model;
 import java.util.ArrayList;
 
 public class Author extends User {
-	
+
+private ArrayList authorsList;
 public ArrayList booksWritten;
 public Subject book;
 public Subject bookRevision;
@@ -28,55 +29,57 @@ public Subject payment;
         this.username = username;
         this.password = password;
     }
-
+    
+    public Author(){
+    }
+    
+    //Gets and Sets
     public String getPersonalID() {
         return personalID;
     }
-
     public void setPersonalID(String personalID) {
         this.personalID = personalID;
     }
-
     public String getForename() {
         return forename;
     }
-
     public void setForename(String forename) {
         this.forename = forename;
     }
-
     public String getSurname() {
         return surname;
     }
-
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
-
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
-    
+    public ArrayList getAuthorsList() {
+        return authorsList;
+    }
+
+    public void setAuthorsList(ArrayList authorsList) {
+        this.authorsList = authorsList;
+    }
+    public void saveAuthor(Author author){
+       authorsList.add(author);
+    }
     
     //These are the methods for adding the author as an observer
     //to these subjects
@@ -109,7 +112,7 @@ public Subject payment;
             
         }
         @Override
-        public void updatePaymentDetails(float amount, boolean complete){
+        public void updatePaymentDetails(double amount, boolean complete){
             
         }
         @Override
@@ -118,10 +121,8 @@ public Subject payment;
         }
 
         public void createAuthor() {
-        Author authorOne = new Author("AU0001", "Roald", "Dahl", "83 High Street, Great Missenden", "RDahl", "WillyWonka");
+        Author authorOne = new Author();
         authorOne.printAuthorDetails();
-        Author authorTwo = new Author("AU0002", "Daphne", "Du Maurier", "Jamaica Inn, Bolventor, Launceston", "DDMaurier", "MaximDeWinter");
-        authorTwo.printAuthorDetails();
         }
         public void printAuthorDetails(){
             System.out.println("Author name is: " + forename + " " + surname);

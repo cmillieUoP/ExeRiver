@@ -78,7 +78,7 @@ public class TestCreatorMethods {
 
     @Test
     public void testCreateMeeting() {
-        Meeting meetingOne = new Meeting("ME001", "Review of James and the Giant Peach", "Telephone", "01/04/2019", "TBC");
+        Meeting meetingOne = new Meeting("ME001", "Review of James and the Giant Peach", "Telephone", "01/04/2019", "TBC", "Attendees");
         meetingOne.createMeeting();
     }
 

@@ -137,41 +137,6 @@ footer {
       </ul>
   </nav>
     <article>
-        <h:form id="addPaymentForm">
-        <h2>Add Payment</h2>
-        <p> Please enter the payment information below:</p>
-        <div>
-            <h:outputLabel value="Payment ID (P####): " />
-            <h:inputText value="#{AddPaymentBean.paymentID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Editor ID (E####): " />
-            <h:inputText value="#{AddPaymentBean.editorID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Agent ID (A####): " />
-            <h:inputText value="#{AddPaymentBean.agentID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Author ID (####): " />
-            <h:inputText value="#{AddPaymentBean.authorID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Book ID (B####): " />
-            <h:inputText value="#{AddPaymentBean.bookID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Payment Amount (0.00): " />
-            <h:inputText value="#{AddPaymentBean.amount}" />
-        </div>
-        <div>
-            <h:outputLabel value="Payment Complete (True/False): " />
-            <h:inputText value="#{AddPaymentBean.complete}" />
-        </div>
-        <div id="submitBtn">
-            <h:commandButton value="Submit" action="#{AddPaymentBean.addPayment}"/>
-        </div>
-        </h:form>
         <br></br>
         <h2><h:outputText value="Payment List"></h:outputText></h2>  
         <h:dataTable value="#{AddPaymentBean.paymentsList}" var="p" bgcolor="#8d99ae" frame="box" cellpadding="5px">  

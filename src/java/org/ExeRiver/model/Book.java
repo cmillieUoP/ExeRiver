@@ -55,6 +55,7 @@ public class Book implements Subject {
     public List<Book> books;
     //private Image bookCover = ;
     private ArrayList bookObservers;
+    private ArrayList booksList;
     
     public Book(String bookID, String bookTitle, String profRID1, String profRID2,String editorID, String authorID, String authorName, String agentID) {
         this.bookID = bookID;
@@ -69,14 +70,10 @@ public class Book implements Subject {
         books = new ArrayList<>();
     }
 
-    public String getBookID() {
-        return bookID;
+    public Book(){
     }
 
-    public void setBookID(String bookID) {
-        this.bookID = bookID;
-    }
-
+    //Gets and Sets
     public String getBookTitle() {
         return bookTitle;
     }
@@ -85,20 +82,37 @@ public class Book implements Subject {
         this.bookTitle = bookTitle;
     }
 
-    public String getProfRID1() {
-        return profRID1;
-    }
-
-    public void setProfRID1(String profRID1) {
-        this.profRID1 = profRID1;
-    }
-
     public String getProfRID2() {
         return profRID2;
     }
 
     public void setProfRID2(String profRID2) {
         this.profRID2 = profRID2;
+    }
+    
+    
+    public String getBookID(){
+        return bookID;
+    }
+
+    public void setBookID(String bookID) {
+        this.bookID = bookID;
+    }
+
+    public String getBookImageRef() {
+        return bookImageRef;
+    }
+
+    public void setBookImageRef(String bookImageRef) {
+        this.bookImageRef = bookImageRef;
+    }
+
+    public String getProfRID1() {
+        return profRID1;
+    }
+
+    public void setProfRID1(String profRID1) {
+        this.profRID1 = profRID1;
     }
 
     public String getEditorID() {
@@ -133,7 +147,113 @@ public class Book implements Subject {
         this.agentID = agentID;
     }
     
+    public int getProfR1Rating() {
+        return profR1Rating;
+    }
+
+    public void setProfR1Rating(int profR1Rating) {
+        this.profR1Rating = profR1Rating;
+    }
+
+    public int getProfR2Rating() {
+        return profR2Rating;
+    }
+
+    public void setProfR2Rating(int profR2Rating) {
+        this.profR2Rating = profR2Rating;
+    }
+
+    public int getEditorRating() {
+        return editorRating;
+    }
+
+    public void setEditorRating(int editorRating) {
+        this.editorRating = editorRating;
+    }
+
+    public String getProfR1Comments() {
+        return profR1Comments;
+    }
+
+    public void setProfR1Comments(String profR1Comments) {
+        this.profR1Comments = profR1Comments;
+    }
+
+    public String getProfR2Comments() {
+        return profR2Comments;
+    }
+
+    public void setProfR2Comments(String profR2Comments) {
+        this.profR2Comments = profR2Comments;
+    }
+
+    public boolean isProfR1Accept() {
+        return profR1Accept;
+    }
+
+    public void setProfR1Accept(boolean profR1Accept) {
+        this.profR1Accept = profR1Accept;
+    }
+
+    public boolean isProfR2Accept() {
+        return profR2Accept;
+    }
+
+    public void setProfR2Accept(boolean profR2Accept) {
+        this.profR2Accept = profR2Accept;
+    }
+
+    public boolean isOverallAcceptStatus() {
+        return overallAcceptStatus;
+    }
+
+    public void setOverallAcceptStatus(boolean overallAcceptStatus) {
+        this.overallAcceptStatus = overallAcceptStatus;
+    }
+
+    public int getCurrentRevision() {
+        return currentRevision;
+    }
+
+    public void setCurrentRevision(int currentRevision) {
+        this.currentRevision = currentRevision;
+    }
+
+    public boolean isManuscriptAgreed() {
+        return manuscriptAgreed;
+    }
+
+    public void setManuscriptAgreed(boolean manuscriptAgreed) {
+        this.manuscriptAgreed = manuscriptAgreed;
+    }
+
+    public boolean isAdvancePublication() {
+        return advancePublication;
+    }
+
+    public void setAdvancePublication(boolean advancePublication) {
+        this.advancePublication = advancePublication;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    public ArrayList getBooksList() {
+        return booksList;
+    }
     
+    public void setBooksList(ArrayList booksList) {
+        this.booksList = booksList;
+    }
+
+    public void saveBook(Book book) {
+        booksList.add(book);
+    }
     
     public List<Book> getList() {
         return books;
@@ -190,12 +310,8 @@ public class Book implements Subject {
         }
     
     public void createBook(){
-       Book bookOne = new Book("B0001", "James and the Giant Peach", "PR001", "PR002", "E001", "AU001", "Roald Dahl", "AG001");
+       Book bookOne = new Book();
        bookOne.bookImageRef = "JATGP.jpg";
        bookOne.printBookDetails(); 
-       Book bookTwo = new Book("B0002", "The Twits", "PR001", "PR002", "E001", "AU001", "Roald Dahl", "AG001");
-       bookTwo.bookID = "B0002";
-       bookTwo.bookImageRef = "Twits.jpg";
-       bookTwo.printBookDetails(); 
     }
 }

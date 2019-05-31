@@ -137,38 +137,6 @@ footer {
     </ul>
   </nav>
     <article>
-        <h:form id="addAgentForm">
-        <h2>Add Agent</h2>
-        <p> Please enter the Agent information below:</p>
-        <div>
-            <h:outputLabel value="ID (AG####): " />
-            <h:inputText value="#{AddAgentBean.personalID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Forename: " />
-            <h:inputText value="#{AddAgentBean.forename}" />
-        </div>
-        <div>
-            <h:outputLabel value="Surname: " />
-            <h:inputText value="#{AddAgentBean.surname}" />
-        </div>
-        <div>
-            <h:outputLabel value="Address: " />
-            <h:inputText value="#{AddAgentBean.address}" />
-        </div>
-        <div>
-            <h:outputLabel value="Username: " />
-            <h:inputText value="#{AddAgentBean.username}" />
-        </div>
-        <div>
-            <h:outputLabel value="Password: " />
-            <h:inputText value="#{AddAgentBean.password}" />
-        </div>
-        <div id="submitBtn">
-            <h:commandButton value="Submit" action="#{AddAgentBean.addAgent}"/>
-        </div>
-        </h:form>
-        <br></br>
         <h2><h:outputText value="Agent List"></h:outputText></h2>  
         <h:dataTable value="#{AddAgentBean.agentsList}" var="a" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
             <h:column>  
@@ -196,6 +164,90 @@ footer {
                 <h:outputText value="#{a.password}"/>  
             </h:column>
         </h:dataTable> 
+        <br></br>
+        <h2><h:outputText value="Author List"></h:outputText></h2>  
+        <h:dataTable value="#{AddAuthorBean.authorsList}" var="a" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+            <h:column>  
+                <f:facet name="header">Personal ID</f:facet>  
+                <h:outputText value="#{a.personalID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Forename</f:facet>  
+                <h:outputText value="#{a.forename}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Surname</f:facet>  
+                <h:outputText value="#{a.surname}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Address</f:facet>  
+                <h:outputText value="#{a.address}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Username</f:facet>  
+                <h:outputText value="#{a.username}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Password</f:facet>  
+                <h:outputText value="#{a.password}"/>  
+            </h:column>
+        </h:dataTable>
+        <br></br>
+        <h2><h:outputText value="Editor List"></h:outputText></h2>  
+        <h:dataTable value="#{AddEditorBean.editorsList}" var="e" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+            <h:column>  
+                <f:facet name="header">Personal ID</f:facet>  
+                <h:outputText value="#{e.personalID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Forename</f:facet>  
+                <h:outputText value="#{e.forename}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Surname</f:facet>  
+                <h:outputText value="#{e.surname}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Address</f:facet>  
+                <h:outputText value="#{e.address}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Username</f:facet>  
+                <h:outputText value="#{e.username}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Password</f:facet>  
+                <h:outputText value="#{e.password}"/>  
+            </h:column>
+        </h:dataTable>
+        <br></br>
+        <h2><h:outputText value="Professional Reviewer List"></h:outputText></h2>  
+        <h:dataTable value="#{AddProfReviewerBean.professionalReviewersList}" var="p" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+            <h:column>  
+                <f:facet name="header">Personal ID</f:facet>  
+                <h:outputText value="#{p.personalID}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Forename</f:facet>  
+                <h:outputText value="#{p.forename}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Surname</f:facet>  
+                <h:outputText value="#{p.surname}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Address</f:facet>  
+                <h:outputText value="#{p.address}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Username</f:facet>  
+                <h:outputText value="#{p.username}"/>  
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Password</f:facet>  
+                <h:outputText value="#{p.password}"/>  
+            </h:column>
+        </h:dataTable>
     </article>
     
 </section>

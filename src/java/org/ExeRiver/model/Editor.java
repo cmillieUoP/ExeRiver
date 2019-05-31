@@ -12,6 +12,7 @@ package org.ExeRiver.model;
 import java.util.ArrayList;
 
 public class Editor extends User{
+    private ArrayList editorsList;
     //This is a list of booksAssigned
     //The intention here is to source the list by books the editor has been assigned to
     private ArrayList booksAssigned;
@@ -28,7 +29,11 @@ public class Editor extends User{
         this.username = username;
         this.password = password;
     }
+    
+    public Editor(){
+    }
 
+    //Gets and Sets
     public String getPersonalID() {
         return personalID;
     }
@@ -76,6 +81,17 @@ public class Editor extends User{
     public void setUsername(String username) {
         this.username = username;
     }
+    public ArrayList getEditorsList() {
+        return editorsList;
+    }
+
+    public void setEditorsList(ArrayList editorsList) {
+        this.editorsList = editorsList;
+    }
+    public void saveEditor(Editor editor){
+       editorsList.add(editor);
+    }
+    
     
     //These are the methods for adding the editor as an observer
     //to these subjects
@@ -111,14 +127,15 @@ public class Editor extends User{
     //will be updated in the editor observer.
     
     public void createEditor() {
-        Editor editorOne = new Editor("E0001","Laura", "Phillips", "15 Circle Way, Caldecott", "LPhillips", "IReadBooks");
+        Editor editorOne = new Editor();
         editorOne.printEditorDetails();
-        }
-        public void printEditorDetails(){
-            System.out.println("Editor name is: " + forename + " " + surname);
-            System.out.println("Editor address is: " + address);
-            System.out.println("Editor password is: " + password + " ...Sshhh");
-        }
+    }
+
+    public void printEditorDetails() {
+        System.out.println("Editor name is: " + forename + " " + surname);
+        System.out.println("Editor address is: " + address);
+        System.out.println("Editor password is: " + password + " ...Sshhh");
+    }
     
     @Override
     public void agreeFinalManuscript() {
@@ -126,13 +143,12 @@ public class Editor extends User{
         //the particular revision will be marked as final
         /*
         public void getBookManuscriptStatus(Boolean manuscriptAgreed) {
-		this.manusciptAgreed = bpm;
-		sequencer.setTempoInBPM(getBPM());
-		notifyBPMObservers();
+		this.manusciptAgreed = manuscriptAgreed;
+		notifyBookObservers();
     }
   
-	public int getBPM() {
-		return bpm;
+	public int getManuscript() {
+		return manuscript;
 	}
         get Book.manuscriptAgreed;
         set Book.manuscriptAgreed(true);

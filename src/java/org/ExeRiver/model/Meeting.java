@@ -27,22 +27,27 @@ public class Meeting implements Subject{
     //This may be a stored as files within the class so people
     //can upload text files of the meeting and save them
     private String meetingNotes;
-    private ArrayList meetingAttendees;
-    
+    private String meetingAttendees;
     private ArrayList meetingObservers;
+    private ArrayList meetingsList;
     
     //Code for observers to notify them of a change to the meeting notes
-    public Meeting(String meetingID, String meetingTitle, String meetingType, String meetingDate, String meetingNotes) {
+    public Meeting(String meetingID, String meetingTitle, String meetingType, String meetingDate, String meetingNotes, String meetingAttendees) {
         
         this.meetingID = meetingID;
         this.meetingTitle = meetingTitle;
         this.meetingType = meetingType;
         this.meetingDate = meetingDate;
         this.meetingNotes = meetingNotes;
+        this.meetingAttendees = meetingAttendees;
         
         meetingObservers = new ArrayList();
     }
 
+    public Meeting(){
+    }
+    
+    //Gets and Sets
     public String getMeetingID() {
         return meetingID;
     }
@@ -75,11 +80,11 @@ public class Meeting implements Subject{
         this.meetingDate = meetingDate;
     }
 
-    public ArrayList getMeetingAttendees() {
+    public String getMeetingAttendees() {
         return meetingAttendees;
     }
 
-    public void setMeetingAttendees(ArrayList meetingAttendees) {
+    public void setMeetingAttendees(String meetingAttendees) {
         this.meetingAttendees = meetingAttendees;
     }
 
@@ -90,9 +95,21 @@ public class Meeting implements Subject{
     public void setMeetingObservers(ArrayList meetingObservers) {
         this.meetingObservers = meetingObservers;
     }
+
+    public ArrayList getMeetingsList() {
+        return meetingsList;
+    }
+
+    public void setMeetingsList(ArrayList meetingsList) {
+        this.meetingsList = meetingsList;
+    }
+    
+    public void saveMeeting(Meeting meeting) {
+        meetingsList.add(meeting);
+    }
     
     public void createMeeting() {
-        Meeting meetingOne = new Meeting("ME001", "Review of James and the Giant Peach", "Telephone", "01/04/2019", "TBC");
+        Meeting meetingOne = new Meeting();
         meetingOne.printMeetingDetails();
     }
 
@@ -112,7 +129,6 @@ public class Meeting implements Subject{
     public void notifyObservers(){
        for (int i = 0; i < meetingObservers.size(); i++) {
            Observer observer = (Observer)meetingObservers.get(i);
-           //observer.updateBookDetails(profR1Rating,profR2Rating,editorRating,profR1Comments,profR2Comments,overallAcceptStatus,manuscriptAgreed);
        } 
     }
     public void meetingNotesChanged(){
@@ -128,13 +144,14 @@ public class Meeting implements Subject{
         return meetingNotes;
     }
     
-    
+    /*
     public void addAttendees() {
         meetingAttendees = new ArrayList();
         meetingAttendees.add("input when registered to meeting");
         meetingAttendees.remove("input when attendee is removed");
         //https://www.dummies.com/programming/java/use-array-lists-in-java/
     }
+    */
     
     public void printMeetingDetails(){
         System.out.println("Meeting Title is: " + meetingTitle);

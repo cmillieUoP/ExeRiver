@@ -83,7 +83,7 @@ public abstract class User implements Observer {
             
         }
         @Override
-        public void updatePaymentDetails(float amount, boolean complete){
+        public void updatePaymentDetails(double amount, boolean complete){
             
         }
         @Override

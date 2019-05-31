@@ -55,7 +55,7 @@ nav {
   float: left;
   text-align: center;
   width: 20%;
-  height: 100vh;
+  height: auto;
   background: #2B2D42;
   padding: 20px;
 }
@@ -71,7 +71,7 @@ article {
   padding: 20px;
   width: 80%;
   background-color: #cccccc;
-  height: 100vh;
+  height: auto;
   position: relative;
 }
 
@@ -116,30 +116,32 @@ footer {
       
         <br></br>
     <ul>
-      <li><a href="faces/main.xhtml">HOME</a></li>
-      <br></br>
-      <li><a href="faces/details.xhtml">CHANGE DETAILS</a></li>
-      <br></br>
-      <li><a href="faces/payments.xhtml">VIEW PAYMENTS</a></li>
-      <br></br>
-      <li><a href="faces/meetings.xhtml">VIEW MEETINGS</a></li>
-      <br></br>
-      <li><a href="faces/addUser.xhtml">ADD USER</a></li>
-      <br></br>
-      <li><a href="faces/addBook.xhtml">ADD BOOK</a></li>
-      <br></br>
-      <li><a href="faces/addMeeting.xhtml">ADD MEETING</a></li>
-      <br></br>
-      <li><a href="faces/addPayment.xhtml">ADD PAYMENT</a></li>
-      <br></br>
-    </ul>
+          <li><a href="faces/adminMain.xhtml">HOME</a></li>
+          <br></br>
+          <li><a href="faces/users.xhtml">VIEW USERS</a></li>
+          <br></br>
+          <li><a href="faces/books.xhtml">VIEW BOOKS</a></li>
+          <br></br>
+          <li><a href="faces/payments.xhtml">VIEW PAYMENTS</a></li>
+          <br></br>
+          <li><a href="faces/meetings.xhtml">VIEW MEETINGS</a></li>
+          <br></br>
+          <li><a href="faces/addUser.xhtml">ADD USER</a></li>
+          <br></br>
+          <li><a href="faces/addBook.xhtml">ADD BOOK</a></li>
+          <br></br>
+          <li><a href="faces/addMeeting.xhtml">ADD MEETING</a></li>
+          <br></br>
+          <li><a href="faces/addPayment.xhtml">ADD PAYMENT</a></li>
+          <br></br>
+      </ul>
   </nav>
     <article>
         <h:form id="addProfReviewerForm">
         <h2>Add Professional Reviewer</h2>
         <p> Please enter the Professional Reviewer information below:</p>
         <div>
-            <h:outputLabel value="ID: " />
+            <h:outputLabel value="ID (PR####): " />
             <h:inputText value="#{AddProfReviewerBean.personalID}" />
         </div>
         <div>
@@ -166,9 +168,9 @@ footer {
             <h:commandButton value="Submit" action="#{AddProfReviewerBean.addProfReviewer}"/>
         </div>
         </h:form>
-        
+        <br></br>
         <h2><h:outputText value="Professional Reviewer List"></h:outputText></h2>  
-        <h:dataTable value="#{profReviewer.professionalReviewersList}" var="p" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+        <h:dataTable value="#{AddProfReviewerBean.professionalReviewersList}" var="p" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
             <h:column>  
                 <f:facet name="header">Personal ID</f:facet>  
                 <h:outputText value="#{p.personalID}"/>  

@@ -137,73 +137,42 @@ footer {
       </ul>
   </nav>
     <article>
-        <h:form id="addPaymentForm">
-        <h2>Add Payment</h2>
-        <p> Please enter the payment information below:</p>
-        <div>
-            <h:outputLabel value="Payment ID (P####): " />
-            <h:inputText value="#{AddPaymentBean.paymentID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Editor ID (E####): " />
-            <h:inputText value="#{AddPaymentBean.editorID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Agent ID (A####): " />
-            <h:inputText value="#{AddPaymentBean.agentID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Author ID (####): " />
-            <h:inputText value="#{AddPaymentBean.authorID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Book ID (B####): " />
-            <h:inputText value="#{AddPaymentBean.bookID}" />
-        </div>
-        <div>
-            <h:outputLabel value="Payment Amount (0.00): " />
-            <h:inputText value="#{AddPaymentBean.amount}" />
-        </div>
-        <div>
-            <h:outputLabel value="Payment Complete (True/False): " />
-            <h:inputText value="#{AddPaymentBean.complete}" />
-        </div>
-        <div id="submitBtn">
-            <h:commandButton value="Submit" action="#{AddPaymentBean.addPayment}"/>
-        </div>
-        </h:form>
         <br></br>
-        <h2><h:outputText value="Payment List"></h:outputText></h2>  
-        <h:dataTable value="#{AddPaymentBean.paymentsList}" var="p" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
+        <h2><h:outputText value="Book List"></h:outputText></h2>  
+        <h:dataTable value="#{AddBookBean.booksList}" var="b" bgcolor="#8d99ae" frame="box" cellpadding="5px">  
             <h:column>  
-                <f:facet name="header">Payment ID</f:facet>  
-                <h:outputText value="#{p.paymentID}"/>  
+                <f:facet name="header">ID</f:facet>  
+                <h:outputText value="#{b.bookID}"/>  
             </h:column>  
+            <h:column>  
+                <f:facet name="header">Title</f:facet>  
+                <h:outputText value="#{b.bookTitle}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Reviewer ID 1</f:facet>  
+                <h:outputText value="#{b.profRID1}"/>  
+            </h:column>  
+            <h:column>  
+                <f:facet name="header">Reviewer ID 2</f:facet>  
+                <h:outputText value="#{b.profRID2}"/>  
+            </h:column>
             <h:column>  
                 <f:facet name="header">Editor ID</f:facet>  
-                <h:outputText value="#{p.editorID}"/>  
-            </h:column>  
-            <h:column>  
-                <f:facet name="header">Agent ID</f:facet>  
-                <h:outputText value="#{p.agentID}"/>  
-            </h:column>  
+                <h:outputText value="#{b.editorID}"/>  
+            </h:column>
             <h:column>  
                 <f:facet name="header">Author ID</f:facet>  
-                <h:outputText value="#{p.authorID}"/>  
+                <h:outputText value="#{b.authorID}"/>  
             </h:column>
             <h:column>  
-                <f:facet name="header">Book ID</f:facet>  
-                <h:outputText value="#{p.bookID}"/>  
+                <f:facet name="header">Author Name</f:facet>  
+                <h:outputText value="#{b.authorName}"/>  
             </h:column>
             <h:column>  
-                <f:facet name="header">Payment Amount</f:facet>  
-                <h:outputText value="#{p.amount}"/>  
+                <f:facet name="header">Agent ID</f:facet>  
+                <h:outputText value="#{b.agentID}"/>  
             </h:column>
-            <h:column>  
-                <f:facet name="header">Completion Status</f:facet>  
-                <h:outputText value="#{p.complete}"/>  
-            </h:column>
-        </h:dataTable>  
+        </h:dataTable> 
     </article>
     
 </section>
