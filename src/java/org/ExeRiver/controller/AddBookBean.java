@@ -43,6 +43,38 @@ public class AddBookBean {
         booksList.add(book);
         
         book = new Book();
+        book = new Book("B0003", "George's Marvellous Medicine", "PR002", "PR003", "E002", "AU001", "Roald Dahl", "AG001");
+        booksList.add(book);
+        
+        book = new Book();
+        book = new Book("B0004", "Esio Trot", "PR002", "PR003", "E002", "AU001", "Roald Dahl", "AG001");
+        booksList.add(book);
+        
+        book = new Book();
+        book = new Book("B0005", "Jamaica Inn", "PR003", "PR004", "E001", "AU002", "Daphne Du Maurier", "AG002");
+        booksList.add(book);
+        
+        book = new Book();
+        book = new Book("B0006", "Rebecca", "PR003", "PR004", "E001", "AU002", "Daphne Du Maurier", "AG002");
+        booksList.add(book);
+        
+        book = new Book();
+        book = new Book("B0007", "My Cousin Rachel", "PR004", "PR001", "E002", "AU002", "Daphne Du Maurier", "AG002");
+        booksList.add(book);
+        
+        book = new Book();
+        book = new Book("B0008", "The Franklin's Tale", "PR004", "PR001", "E002", "AU003", "Geoffery Chaucer", "AG001");
+        booksList.add(book);
+        
+        book = new Book();
+        book = new Book("B0009", "The Miller's Tale", "PR001", "PR003", "E001", "AU003", "Geoffery Chaucer", "AG001");
+        booksList.add(book);
+        
+        book = new Book();
+        book = new Book("B0010", "The Wife of Bath", "PR002", "PR004", "E002", "AU003", "Geoffery Chaucer", "AG001");
+        booksList.add(book);
+        
+        book = new Book();
         //Saves entry to the model list
         book.setBooksList((ArrayList<Book>) booksList);
         //Resets the data entry for the next submission

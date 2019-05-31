@@ -52,8 +52,6 @@ public class Book implements Subject {
     //This notes whether the Book has been accepted to advance to publication
     //This can be entered by an editor or reviewers
     public boolean advancePublication; 
-    public List<Book> books;
-    //private Image bookCover = ;
     private ArrayList bookObservers;
     private ArrayList booksList;
     
@@ -67,7 +65,6 @@ public class Book implements Subject {
         this.authorName = authorName;
         this.agentID = agentID;
         bookObservers = new ArrayList();
-        books = new ArrayList<>();
     }
 
     public Book(){
@@ -235,14 +232,6 @@ public class Book implements Subject {
         this.advancePublication = advancePublication;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
     public ArrayList getBooksList() {
         return booksList;
     }
@@ -254,10 +243,7 @@ public class Book implements Subject {
     public void saveBook(Book book) {
         booksList.add(book);
     }
-    
-    public List<Book> getList() {
-        return books;
-    }
+
     @Override
     public void addObserver(Observer o){
         bookObservers.add(o);

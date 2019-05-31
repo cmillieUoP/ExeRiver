@@ -32,11 +32,11 @@ public class AddAgentBean {
     public void init() {
         agentsList = new ArrayList<>();
         //Creates preset agent entries
-        agent =new Agent("AG0001", "Adrian", "Gent", "42 Walberry Road, Umlin", "AGent", "WriteMeABook");
+        agent =new Agent("AG0001", "Mia", "Miles", "125 St Maurices Road, Pumpherston", "MMiles", "EnjoyTheseBooks");
         agentsList.add(agent);
         
         agent = new Agent();
-        agent = new Agent("AG0002", "Richard", "Atkins", "101 Smith Road, Umlin", "AGent", "WriteMeABook");
+        agent = new Agent("AG0002", "Amelia", "Todd", "27 Prince Consort Road, Kelleth", "ATodd", "EnjoyTheseNovels");
         agentsList.add(agent);
         
         agent = new Agent();
